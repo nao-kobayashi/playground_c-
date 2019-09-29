@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+dice
+sum_array/out
+sum_array/work1
+playground
