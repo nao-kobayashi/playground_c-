@@ -36,3 +36,6 @@ sum_array/work1
 playground
 program
 app
+*/.idea
+*/cmake-build-debug
+*/cmake-build-release
