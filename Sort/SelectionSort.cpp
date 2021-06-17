@@ -15,8 +15,10 @@ using namespace std;
     }
 }*/
 
+SelectionSort::SelectionSort(vector<int> &numbers): numbers(numbers) {}
+
 //call by reference is more secure than call by pointer.
-void SelectionSort::Sort(vector<int>& numbers) {
+void SelectionSort::Sort() {
     int *arr = numbers.data();
     for (int i = 0; i < numbers.size(); i++) {
         for (int j = i + 1; j < numbers.size();j++) {

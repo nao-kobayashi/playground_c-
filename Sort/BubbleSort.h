@@ -6,7 +6,11 @@ using namespace std;
 
 class BubbleSort {
 public:
-    static void Sort(vector<int>& numbers);
+    BubbleSort(vector<int>& numbers);
+    void Sort();
+
+private:
+    vector<int>& numbers;
 };
 
 #endif

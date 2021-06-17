@@ -1,6 +1,8 @@
 #include "QuickSort.h"
 #include <iostream>
 
+QuickSort::QuickSort(vector<int> &source): numbers(source) {}
+
 //higher number of the first two different elements.
 int QuickSort::pivot(int *arr, int low, int high) {
     int k = low + 1;
@@ -38,14 +40,15 @@ int QuickSort::partition(int *arr, int low, int high, int pivot) {
     return l;
 }
 
-void QuickSort::Sort(vector<int> &numbers, int low, int high) {
+void QuickSort::Sort(int low, int high) {
     if (low < high) {
         int* arr = numbers.data();
         int p = pivot(arr, low, high);
         if ( p != -1) {
             int k = partition(arr, low, high, arr[p]);
-            Sort(numbers, low, k - 1);
-            Sort(numbers, k, high);
+            Sort(low, k - 1);
+            Sort(k, high);
         }
     }
 }
+

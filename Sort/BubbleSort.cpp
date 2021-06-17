@@ -2,7 +2,9 @@
 
 using namespace std;
 
-void BubbleSort::Sort(vector<int>& numbers) {
+BubbleSort::BubbleSort(vector<int> &numbers): numbers(numbers) {}
+
+void BubbleSort::Sort() {
     int n = numbers.size();
     short swap_check = 1;
     for (int i = 0; (i < n) && (swap_check == 1); i++) {

@@ -6,7 +6,11 @@ using namespace std;
 
 class SelectionSort {
 public:
-    static void Sort(vector<int>& nums);
+    SelectionSort(vector<int>& numbers);
+    void Sort();
+
+private:
+    vector<int>& numbers;
 };
 
 #endif

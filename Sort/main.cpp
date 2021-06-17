@@ -35,7 +35,7 @@ int main() {
         numbers.push_back(num);
     }
 #else
-    int method = 4;
+    int method = 1;
     int n = 10;
     vector<int> numbers;
     for (auto i = n; i > 0; i--) {
@@ -44,18 +44,26 @@ int main() {
 #endif
 
     switch (method) {
-        case BUBBLE_SORT:
-            BubbleSort::Sort(numbers);
+        case BUBBLE_SORT: {
+            BubbleSort bubbleSort(numbers);
+            bubbleSort.Sort();
             break;
-        case SELECTION_SORT:
-            SelectionSort::Sort(numbers);
+        }
+        case SELECTION_SORT: {
+            SelectionSort selectionSort(numbers);
+            selectionSort.Sort();
             break;
-        case MERGE_SORT:
-            MergeSort::Sort(numbers, 0, numbers.size() - 1);
+        }
+        case MERGE_SORT: {
+            MergeSort mergeSort(numbers);
+            mergeSort.Sort(0, numbers.size() - 1);
             break;
-        case QUICK_SORT:
-            QuickSort::Sort(numbers, 0, numbers.size() - 1);
-
+        }
+        case QUICK_SORT: {
+            QuickSort qsort(numbers);
+            qsort.Sort(0, numbers.size() - 1);
+            break;
+        }
     }
 
     cout << "Sorted Array:";
