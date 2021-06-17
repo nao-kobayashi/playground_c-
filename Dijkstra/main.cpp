@@ -77,6 +77,7 @@ int main() {
     vector<long long> dis;
     vector<int> path;
     dijkstra(g, start, end,  dis, path);
+
     vector<int> ansPath = get_path(path, end);
     for (auto &p: ansPath) {
         cout << p << "->";
