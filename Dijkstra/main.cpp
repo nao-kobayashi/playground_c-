@@ -22,9 +22,11 @@ void dijkstra(const Graph &g, int start, int end, vector<long long> &dis, vector
     int n = g.size();
     dis.resize(n, INF);
     prev.resize(n, -1);
+
     priority_queue<P, vector<P>, greater<P>> pq;
     dis[start] = 0;
     pq.emplace(dis[start], start);
+
     while(!pq.empty()) {
         P p = pq.top();
         pq.pop();
@@ -76,7 +78,7 @@ int main() {
 
     vector<long long> dis;
     vector<int> path;
-    dijkstra(g, start, end,  dis, path);
+    dijkstra(g, start, end, dis,path);
 
     vector<int> ansPath = get_path(path, end);
     for (auto &p: ansPath) {
