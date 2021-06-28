@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <sstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -35,5 +37,13 @@ int main() {
 
     vector<unsigned char> expected2 { 0x0B, 0xAD };
     assert(hexstr_to_bytes("BAD") == expected2);
+
+    ostringstream oss;
+    oss.setf(ios_base::uppercase);
+    for (auto ch : hexstr_to_bytes("BAD") ) {
+        oss << hex << setw(2) << setfill('0') << static_cast<int>(ch) << endl;
+    }
+    cout << oss.str() << endl;
+
     return 0;
 }
