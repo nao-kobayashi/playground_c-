@@ -17,7 +17,7 @@ template<typename Duration>
 void remove_files_older_than(const path &path, const Duration duration) {
     try {
         if (exists(path)) {
-            if (is_regular_file(path) && is_older_than(path, duration)) {
+            if (/*is_regular_file(path) &&*/ is_older_than(path, duration)) {
                 //remove(path);
                 cout << "remove file: " << path << endl;
             } else if (is_directory(path)) {
