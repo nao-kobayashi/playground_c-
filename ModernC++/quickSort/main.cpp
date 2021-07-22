@@ -10,7 +10,6 @@ RandomIt partition(RandomIt first, RandomIt last) {
     auto i = first + 1;
     auto j = last - 1;
 
-    //cout << "pivot: " << pivot << " first: " << *i << " last: " << *j << endl;
     while (i <= j) {
         while (i <= j && *i <= pivot)  {
             i++;
@@ -20,9 +19,12 @@ RandomIt partition(RandomIt first, RandomIt last) {
         }
         if (i < j) std::iter_swap(i, j);
     }
-//    cout << *(i-1) << " " << *first << endl;
+
+    //first is pivot
+    // i => pivot < *i (from loop condition)
+    // i - 1 => pivot >= *(i-1)
+    // therefore i - 1 and first(pivot) always can swap.
     iter_swap(i - 1, first);
-//    cout << *(i-1) << " " << *first << endl;
     return i - 1;
 }
 
@@ -30,7 +32,6 @@ template <class RandomIt>
 void quick_sort(RandomIt first, RandomIt last) {
     if (first < last ) {
         auto p = partition(first, last);
-//        cout << "p is " << *p << endl;
         quick_sort(first, p);
         quick_sort(p + 1, last);
     }
