@@ -80,6 +80,6 @@ int main() {
     john->approve(expense{5000, "hotel accommodation"});
     john->approve(expense{50000, "conference costs"});
     john->approve(expense{200000, "new lorry"});
-    
+
     return 0;
 }
